@@ -1,0 +1,42 @@
+.card {
+  background-color: #771b84;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.avatar {
+  background-color: #8e3e9f;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+.initials {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.info {
+  flex: 1;
+}
+
+.metrics {
+  display: flex;
+  gap: 1rem;
+}
+
+.metricBox {
+  background-color: #8e3e9f;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+}
