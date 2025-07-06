@@ -1,22 +1,34 @@
-import { useState } from "react";
-import Sidebar from "./components/SideBar/SideBar";
-import StatsCard from "./components/StatsCard/StatsCard"; // <- import the new component
-import styles from "./App.module.css";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import Login from "./pages/Login/Login";
+import ProtectedRoute from "./routes/ProtectedRoute";
+import PublicRoute from "./routes/PublicRoute";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <ProtectedRoute>
+        <Dashboard />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/login",
+    element: (
+      <PublicRoute>
+        <Login />
+      </PublicRoute>
+    ),
+  },
+  {
+    path: "*",
+    element: <Login />,
+  },
+]);
 
 function App() {
-  const [collapsed, setCollapsed] = useState(false);
-
-  return (
-    <div className={styles.container}>
-      <Sidebar
-        collapsed={collapsed}
-        toggleCollapsed={() => setCollapsed(!collapsed)}
-      />
-      <main className={styles.main}>
-        <StatsCard />
-      </main>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 }
 
 export default App;

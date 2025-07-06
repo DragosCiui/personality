@@ -12,9 +12,12 @@ try {
 
     // Create users table
     $db->exec("CREATE TABLE users (
-        id INTEGER PRIMARY KEY AUTOINCREMENT,
-        name TEXT NOT NULL
-    )");
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      name TEXT NOT NULL,
+      email TEXT UNIQUE NOT NULL,
+      password TEXT NOT NULL
+  )");
+  
 
     // Create user_stats table with user_id as foreign key
     $db->exec("CREATE TABLE user_stats (
@@ -26,7 +29,10 @@ try {
     )");
 
     // Insert dummy user
-    $db->exec("INSERT INTO users (name) VALUES ('John')");
+    $password = password_hash('test123', PASSWORD_DEFAULT);
+    $db->exec("INSERT INTO users (name, email, password) 
+               VALUES ('John', 'john@example.com', '$password')");
+    
 
     // Link the stats to the inserted user (id = 1)
     $db->exec("INSERT INTO user_stats (user_id, time_logged, tasks_completed)
