@@ -1,14 +1,15 @@
-import styles from "./SideBar.module.css";
 import { useState } from "react";
+import SidebarItem from "../SidebarItem/SidebarItem";
+import styles from "./SideBar.module.css";
 
 const menuItems = [
-  { icon: "🏠", label: "Home" },
-  { icon: "👤", label: "My Profile" },
-  { icon: "📁", label: "My Work" },
-  { icon: "📈", label: "My Growth" },
-  { icon: "❤️", label: "My Benefits" },
-  { icon: "🏢", label: "Company Hub" },
-  { icon: "⚙️", label: "Settings" },
+  { icon: "🏠", label: "Home", path: "/" },
+  { icon: "👤", label: "My Profile", path: "/profile" },
+  { icon: "📁", label: "My Work", path: "/work" },
+  { icon: "📈", label: "My Growth", path: "/growth" },
+  { icon: "❤️", label: "My Benefits", path: "/benefits" },
+  { icon: "🏢", label: "Company Hub", path: "/hub" },
+  { icon: "⚙️", label: "Settings", path: "/settings" },
 ];
 
 export default function Sidebar() {
@@ -29,11 +30,14 @@ export default function Sidebar() {
 
       <nav>
         <ul>
-          {menuItems.map((item, idx) => (
-            <li key={idx}>
-              <span className={styles.icon}>{item.icon}</span>
-              <span className={styles.label}>{item.label}</span>
-            </li>
+          {menuItems.map((item) => (
+            <SidebarItem
+              key={item.path}
+              icon={item.icon}
+              label={item.label}
+              path={item.path}
+              collapsed={collapsed}
+            />
           ))}
         </ul>
       </nav>
