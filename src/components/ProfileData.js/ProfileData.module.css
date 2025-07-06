@@ -1,0 +1,55 @@
+.card {
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  max-width: 600px;
+  margin: 2rem auto;
+}
+
+.banner {
+  background-color: #e0cfe8;
+  height: 100px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: -30px;
+  padding: 0 1.5rem;
+}
+
+.avatar {
+  background-color: #6a1b9a;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid white;
+}
+
+.name {
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.info {
+  padding: 1.5rem;
+}
+
+.label {
+  font-weight: bold;
+  color: #666;
+  margin-bottom: 0.25rem;
+}
+
+.value {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
