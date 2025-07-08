@@ -1,6 +1,6 @@
 import { useState } from "react";
 import SidebarItem from "../SidebarItem/SidebarItem";
-import styles from "./SideBar.module.css";
+import styles from "./Sidebar.module.css";
 
 const menuItems = [
   { icon: "🏠", label: "Home", path: "/" },

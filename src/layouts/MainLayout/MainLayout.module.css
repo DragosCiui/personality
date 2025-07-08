@@ -5,6 +5,7 @@
 
 .mainContent {
   flex-grow: 1;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
   background-color: #f9f9fc;
 }

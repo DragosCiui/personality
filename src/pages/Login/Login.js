@@ -36,7 +36,7 @@ export default function Login() {
         setError("Login failed");
       }
     } catch {
-      setError("Network error");
+      setError("Login credentials are not correct");
     }
   };
 
